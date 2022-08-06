@@ -4,14 +4,16 @@ import TimerContext from "../contexts/timerContext";
 import React, { useState } from "react";
 
 function App() {
-  const [time, setTime] = useState();
-  const [minute, setMinute] = useState(3);
-  const [second, setSecond] = useState(0);
+  //Added state to the App component
+  const [time, setTime] = useState(); //time is the value of the time, it will be used to stop the timer once the time is up
+  const [minute, setMinute] = useState(3); //minute is the value of the minute input
+  const [second, setSecond] = useState(0);  //second is the value of the second input
 
-  const [running, setRunning] = useState(false);
-  const [paused, setPaused] = useState(false);
-  const [timerString, setTimerString] = React.useState('03:00');
+  const [running, setRunning] = useState(false); //running will be true if the timer is running
+  const [paused, setPaused] = useState(false); //paused will be true if the timer is paused
+  const [timerString, setTimerString] = React.useState('03:00'); //timerString will be the value of the timer string to be displayed
   return (
+    //Added a context provider to the App component
     <TimerContext.Provider value={{
       time,
       minute,

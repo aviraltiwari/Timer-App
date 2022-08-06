@@ -4,6 +4,10 @@ import TimerContext from "../contexts/timerContext";
 
 function UserInput() {
     const { minute, second, running, setMinute, setSecond } = useContext(TimerContext);
+    // ifPositive is a helper function to check if the input is a positive number
+    // if the input is a positive number, it will execute the callback function
+    // if the input is a negative number, it will console.log an error message
+    // and execute the callback function with a default value of 0
     const ifPositive = (num, cb) => {
         if (num >= 0) {
             cb(num)
@@ -14,7 +18,6 @@ function UserInput() {
     }
     return (
         <div className='user-input-container'>
-            {/* {running && <h1>Please Stop The Timer To Edit The Stop Watch</h1>} */}
             <div className="user-input">
                 <h2>Please Enter An Input Or Start The Timer With 3 Mins</h2>
                 <div className='input-container'>

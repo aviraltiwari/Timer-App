@@ -18,7 +18,8 @@ function Timer() {
         setTimerString,
     } = useContext(TimerContext);
 
-
+    //Added useEffect hook so that the timer will start when the component is mounted
+    //But the the timer will not start if the timer is not running
     useEffect(() => {
         const timer = setInterval(() => {
             if (running && !paused) {
@@ -49,6 +50,7 @@ function Timer() {
         <div className='timer' style={{ height: running ? '100vh' : '50vh' }}>
             <h2>Timer {running && 'is running for ' + timerString}</h2>
             <h1>{!running && timerString}</h1>
+            {/* The below logic is to display the time in 00:00 format */}
             <h1>{running && (minute < 10 && second < 10 ? `0${minute}:0${second}` :
                 (minute < 10 ? `0${minute}:${second}` :
                     (second < 10 ? `${minute}:0${second}` :
