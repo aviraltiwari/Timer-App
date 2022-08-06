@@ -1,5 +1,5 @@
 
-#This is a Timer App created with React.
+# This is a Timer App created with React.
 
 ## Features
 - Set the time
